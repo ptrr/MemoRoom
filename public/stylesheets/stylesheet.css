@@ -96,23 +96,26 @@ h1 { margin: 0; padding: 25px 15px 10px 15px; font-size: 20pt; text-transform: u
 h2 { font-size: 14pt; }
 a { color: #BA303A; text-decoration: none; }
 a:hover { text-decoration: underline; }
-table { border-collapse: collapse; width: 100%}
+table { border-collapse: collapse; width: 100%; margin-right: 15px;}
 th { text-align: left; }
 td img { padding: 0; }
 hr { border: 0; margin: 15px 0 10px 15px; color: #CCC; background-color: #CCC; height: 2px; }
 
 #container { min-height: 100%; position: relative; }
-header { color: #333; }
+#header { color: #333; border-bottom: #572A00 10px solid; overflow: hidden; height: 100px;}
+#header img{
+  padding: 20px;
+}
 #menu {  }
 #main { position: relative; margin-left: auto; margin-right: auto; padding-bottom: 60px; padding-right: 10px; }
 #main p { padding: 0 15px 0 15px; margin-bottom: 10px; }
 #main p.error, #content p.notice { padding: 10px 15px 10px 50px; margin: 0 0 15px 15px; }
 #main ul { padding-top: 0; }
-footer {height: 30px; position: absolute; bottom: 0; width: 100%; background-color: #526880; color: #fff; }
+#footer {height: 40px; position: absolute; bottom: 0; width: 100%; background-color: #526880; color: #fff; }
 #alert_no_fade { position: relative; top: 15px; }
 
-.menu { padding: 10px 15px 7px 15px; color: #FFF; }
-.menu a, .footer a { color: #FFF; }
+.menu { padding: 10px 15px 7px 15px;}
+.menu a, .footer a { }
 .footer { text-align: center; }
 .footer a { text-decoration: underline; }
 .table_header td { font-weight: bold; }
@@ -162,9 +165,8 @@ span.field_with_errors input, span.field_with_errors textarea { background-color
 .folder_menu, .user_menu, .group_menu { padding: 7px 14px 7px 14px; }
 .folder_menu a, .user_menu a, .group_menu a { outline: none; }
 
-.highlight { display: inline-block; margin: -7px 0 -7px 0; padding-left: 14px; background-color: #BA303A; background-image: url(../images/left.png); background-repeat: no-repeat; background-position: top left; }
-.highlight span { display: inline-block; height: 27px; padding: 7px 14px 0 0; background-image: url(../images/right.png); background-repeat: no-repeat; background-position: top right; }
-.highlight a { text-decoration: none;  outline: none; }
+.highlight { border-radius: 5px; background: #526880; padding: 10px;}
+.highlight a{ color: #fff;  }
 /*END*/
 
 .ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }

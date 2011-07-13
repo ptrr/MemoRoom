@@ -1,3 +1,23 @@
+
+jQuery(document).ready(function($) {
+// Code that uses jQuery's $ can follow here.
+var resizeTimer = null;
+    $(window).bind('resize', function() {
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(rsz, 100);
+    });
+
+
+function rsz(){
+    if($(window).height() < 500){
+        $("#content").height(500)
+    } else {
+        $("#content").height($(window).height() - 110);
+    }
+}
+rsz();
+});
+
 Event.observe(window, 'load', function() {
 	fadeout.delay(1.5, 'notice');
 	fadeout.delay(1.5, 'alert');
@@ -35,3 +55,6 @@ function update_counter(element, counter)
 	$(counter).innerHTML = element.value.length;
 	$(counter).style.color = element.value.length > 256 ? '#F00' : '#000';
 }
+
+
+

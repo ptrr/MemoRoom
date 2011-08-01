@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  fileid: 1
+  change: MyText
+  revision: 1
+
+two:
+  fileid: 1
+  change: MyText
+  revision: 1

@@ -2,26 +2,27 @@
 <html>
 <head>
 <% if content_for? :title -%>
-	<title>Boxroom | <%= content_for :title %></title>
+  <title>Memoroom | <%= content_for :title %></title>
 <% else -%>
-	<title>Boxroom</title>
+  <title>Memoroom</title>
 <% end -%>
 <script src="/javascripts/jquery-1.5.1.min.js" type="text/javascript">
 $.noConflict();
 </script>
-	<%= stylesheet_link_tag :all, :cache => false %>
-	<%= javascript_include_tag :defaults, :cache => false %>
-	<%= csrf_meta_tag %>
-	<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <%= stylesheet_link_tag :all, :cache => false %>
+  <%= javascript_include_tag :defaults, :cache => false %>
+  <%= csrf_meta_tag %>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 </head>
 <body>
-	<div id="container">
-		<div id="header"><%= render 'shared/header' %>
-		<%= render 'shared/menu' %></div>
-		<div id="content">
-			<%= yield %>
-		</div>
-		<div id="footer"><%= render 'shared/footer' %></div>
-	</div>
+  <div id="container">
+    <div id="header"><%= render 'shared/header' %></div>
+      <div id="content">
+        <%= render 'shared/menu' %>
+
+      <%= yield %>
+    </div>
+    <div id="footer"><%= render 'shared/footer' %></div>
+  </div>
 </body>
 </html>

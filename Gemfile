@@ -7,6 +7,11 @@ gem 'acts_as_tree'
 gem 'paperclip', '2.3.15'
 gem 'sqlite3'
 
+group :development do
+  gem "ruby-debug"
+  gem "rspec"
+end
+
 group :test do
   gem 'factory_girl_rails'
 end

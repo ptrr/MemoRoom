@@ -10,7 +10,7 @@ Boxroom::Application.routes.draw do
   resources :groups, :except => :show
   resources :files, :except => [:index, :new, :create]
   resources :share_links, :only => [:index, :show, :destroy]
-
+  resources :versions, :only => [:index]
   resources :clipboard, :only => [:create, :destroy] do
     post 'copy', :on => :member
     post 'move', :on => :member
@@ -34,5 +34,6 @@ Boxroom::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+  match "/versions/:id" => "version#index"
   root :to => "folders#index"
 end

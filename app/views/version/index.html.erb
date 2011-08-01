@@ -1,0 +1,11 @@
+<h1>Version for file <%=@file.attachment_file_name %> <%=@file.created_at%> </h1>
+
+<% @files.each do |file| %>
+<br />
+<p><%= file.attachment_file_name %> - <%= file.created_at %> <br />
+<%
+  version = Version.find_by_fileid(file.id)
+%>
+<%=version.change %>
+</p>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110616215033) do
+ActiveRecord::Schema.define(:version => 20110722103605) do
 
   create_table "folders", :force => true do |t|
     t.string   "name"
@@ -69,6 +69,15 @@ ActiveRecord::Schema.define(:version => 20110616215033) do
     t.datetime "reset_password_token_expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "versions", :force => true do |t|
+    t.integer  "fileid"
+    t.text     "change"
+    t.integer  "revision"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "prev_id"
   end
 
 end

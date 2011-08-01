@@ -15,16 +15,27 @@ class FilesController < ApplicationController
   # @target_folder is set in require_existing_target_folder
   def new
     @file = @target_folder.user_files.build
+    @version = Version.new
   end
 
   # @target_folder is set in require_existing_target_folder
   def create
     @file = @target_folder.user_files.build(params[:user_file])
-
     if @file.save
-      redirect_to folder_url(@target_folder)
+            puts "--------"
+      puts "SUCCES: upload complete."
+      puts "--------"
+      puts @file.id
+      @previous_files = @target_folder.user_files.where(:attachment_file_name => @file.attachment_file_name).order("id")
+      @previous_file = @previous_files[@previous_files.count - 2]
+      @version = Version.new(:fileid => @file.id, :prev_id => @previous_file.id, :change => params[:change])
+      @version.save
+      redirect_to folder_url(@target_folder), :notice => "File uploaded."
     else
-      render :action => 'new'
+      puts "--------"
+      puts "ERROR: not saved."
+      puts "--------"
+      redirect_to folder_url(@target_folder), :error => "Something went wrong"
     end
   end
 

@@ -14,6 +14,7 @@ class FoldersController < ApplicationController
 
   # Note: @folder is set in require_existing_folder
   def show
+    @files_shown = Array.new
   end
 
   # Note: @target_folder is set in require_existing_target_folder
